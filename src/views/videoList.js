@@ -10,12 +10,13 @@ var VideoListView = Backbone.View.extend({
 
   render: function() {
     this.$el.children().detach();
-    this.videos.forEach(function (videoElement) {
-      console.log('here is video element: ', videoElement);
-      var currentView = new VideoListEntryView(videoElement);
-      // this.$el.append(currentView);
-    });
     this.$el.html(this.template());
+    for (var i = 0; i < this.videos.length; i++) {
+      var thumbnailHTML = new VideoListEntryView({ model: this.videos.models[i] });
+      thumbnailHTML = thumbnailHTML.render();
+      console.log(thumbnailHTML);
+      this.$el.children().append(thumbnailHTML);
+    }
     return this;
   },
 
