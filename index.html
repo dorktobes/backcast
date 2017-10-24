@@ -27,10 +27,19 @@
   <script src="src/views/videoList.js"></script>
   <script src="src/views/videoListEntry.js"></script>
   <script src="src/views/videoPlayer.js"></script>
+  <script src="src/data/exampleVideoData.js"></script>
 
   <script>
     backboneReady(() => {
+      var exampleVideos = new Videos(exampleVideoData);
+      console.log(exampleVideos);
       new AppView();
+      var videoListView = new VideoListView();
+      videoListView.videos = exampleVideos;
+      console.log(videoListView.videos);
+      
+      
+      
     });
   </script>
 
