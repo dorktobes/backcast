@@ -32,13 +32,13 @@
   <script>
     backboneReady(() => {
       var exampleVideos = new Videos(exampleVideoData);
-      console.log(exampleVideos);
+      console.log('example videos ', exampleVideos.models[0]);
       new AppView();
-      new SearchView();      
+      new SearchView();
+      new VideoPlayerView({model: exampleVideos.models[0]});      
       var videoListView = new VideoListView();
       videoListView.videos = exampleVideos;
-      console.log(videoListView.videos);
-  
+      console.log(videoListView.videos);  
     });
   </script>
 
