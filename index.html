@@ -31,14 +31,10 @@
 
   <script>
     backboneReady(() => {
-      var exampleVideos = new Videos(exampleVideoData);
-      console.log('example videos ', exampleVideos.models[0]);
-      new AppView();
-      new SearchView();
-      new VideoPlayerView({model: exampleVideos.models[0]});      
-      var videoListView = new VideoListView();
-      videoListView.videos = exampleVideos;
-      console.log(videoListView.videos);  
+      var app = new AppView();
+      app.videos.reset(exampleVideoData);
+      
+ 
     });
   </script>
 

@@ -17,6 +17,8 @@ describe ('VideoPlayerView', function() {
   });
 
   it('should render a video\'s content', function() {
+  
+
     expect(view.el).to.match(new RegExp(model.attributes.title));
   });
 
